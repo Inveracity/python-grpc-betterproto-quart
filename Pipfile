@@ -25,6 +25,6 @@ python_version = "3"
 [scripts]
 isort = "isort ."
 lint = "flake8 ."
-grpc_recommendations = "python -m grpc_tools.protoc -I protobufs --python_betterproto_out=bookstore/lib recommendations.proto"
+generate = "python -m grpc_tools.protoc -I protobufs --python_betterproto_out=bookstore/lib recommendations.proto"
 recommendations = "python -m bookstore.rec_service"
 web = "python -m bookstore.marketplace.marketplace"

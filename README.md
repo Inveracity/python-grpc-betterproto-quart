@@ -9,8 +9,8 @@ This is just some code exploration to figure out how these fancy things work
 pip install pipenv
 pipenv sync --dev
 
-# Generates python code from protocol buffers
-pipenv run grpc_recommendations
+# Generate python code from protocol buffers
+# pipenv run generate # do not run this, it's broken right now, the generated code is currently included in bookstore/lib
 
 # Run the recommendations gRPC service
 recommendations = "python -m bookstore.rec_service"
