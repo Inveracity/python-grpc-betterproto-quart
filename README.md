@@ -13,10 +13,10 @@ pipenv sync --dev
 # pipenv run generate # do not run this, it's broken right now, the generated code is currently included in bookstore/lib
 
 # Run the recommendations gRPC service
-recommendations = "python -m bookstore.rec_service"
+pipenv run recommendations
 
 # Run the webserver
-web = "python -m bookstore.marketplace.marketplace"
+pipenv run web
 ```
 
 The webserver asks the recommendations service for book recommendations in the "mystery" category and shows them in the browser.
