@@ -1,0 +1,30 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[dev-packages]
+autopep8 = "*"
+flake8 = "*"
+flake8-isort = "*"
+flake8-annotations = "*"
+isort = "*"
+pytest = "*"
+pytest-cov = "*"
+#betterproto = {git = "https://github.com/danielgtaylor/python-betterproto"}
+
+[packages]
+quart = "==0.14.1"
+betterproto = {extras = ["compiler"], version="==2.0.0b2"}
+grpcio-tools = "==1.35.0"
+grpclib = "==0.4.1"
+
+[requires]
+python_version = "3"
+
+[scripts]
+isort = "isort ."
+lint = "flake8 ."
+grpc_recommendations = "python -m grpc_tools.protoc -I protobufs --python_betterproto_out=bookstore/lib recommendations.proto"
+recommendations = "python -m bookstore.rec_service"
+web = "python -m bookstore.marketplace.marketplace"
