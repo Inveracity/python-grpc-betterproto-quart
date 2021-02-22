@@ -29,4 +29,4 @@ The webserver asks the recommendations service for book recommendations in the "
 
 - Realpython on Microservices with gRPC: https://realpython.com/python-microservices-grpc
 - Betterproto: https://github.com/danielgtaylor/python-betterproto
-- Quarts: https://pypi.org/project/pyobjc-framework-Quartz/
+- Quarts: https://pypi.org/project/Quart/
