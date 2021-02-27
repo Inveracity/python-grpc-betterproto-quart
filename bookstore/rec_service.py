@@ -1,4 +1,5 @@
 import asyncio
+import logging
 import random
 from typing import NoReturn
 
@@ -9,6 +10,8 @@ from bookstore.lib.recommendations import BookRecommendation
 from bookstore.lib.recommendations import RecommendationResponse
 from bookstore.lib.recommendations import RecommendationsBase
 
+
+log = logging.getLogger(__name__)
 
 books_by_category = {
     BookCategory.MYSTERY: [
@@ -48,14 +51,25 @@ class RecommendationService(RecommendationsBase):
         return RecommendationResponse(recommendations=books_to_recommend)
 
 
+async def close() -> NoReturn:
+    log.info("Service stopped")
+    exit(0)
+
+
 async def start_server() -> NoReturn:
     HOST = "127.0.0.1"
     PORT = 50051
     server = Server([RecommendationService()])
+
     await server.start(HOST, PORT)
     await server.wait_closed()
 
 if __name__ == "__main__":
     loop = asyncio.get_event_loop()
-    loop.run_until_complete(start_server())
-    loop.close()
+
+    try:
+        log.info("Recommendations service started")
+        loop.run_until_complete(start_server())
+
+    except KeyboardInterrupt:
+        loop.run_until_complete(close())

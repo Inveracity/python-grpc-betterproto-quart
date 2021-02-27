@@ -10,7 +10,7 @@ pip install pipenv
 pipenv sync --dev
 
 # Generate python code from protocol buffers
-# pipenv run generate # do not run this, it's broken right now, the generated code is currently included in bookstore/lib
+# pipenv run generate
 
 # Run the recommendations gRPC service
 pipenv run recommendations
