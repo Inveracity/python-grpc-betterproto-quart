@@ -1,6 +1,7 @@
 import asyncio
 import logging
 import random
+from sys import exit
 from typing import NoReturn
 
 from grpclib.server import Server

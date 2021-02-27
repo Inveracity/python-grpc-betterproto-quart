@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+package green;
+
+enum GreenColors {
+    MOLDY = 0;
+    MODERN = 1;
+    PASTEL = 2;
+}
+
+// Make a map of green colours
+message GreenHexadecimal {
+    map<int32, string> hexdict = 1;
+}
+
+// Green request
+message GreenRequest {}
+
+// Green response, returns the colours map
+message GreenResponse {
+    repeated GreenHexadecimal hexadecimal = 1;
+}
+
+// Green service
+service Green {
+    rpc Green (GreenRequest) returns (GreenResponse);
+}

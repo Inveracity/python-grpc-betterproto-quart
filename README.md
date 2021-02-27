@@ -15,9 +15,20 @@ pipenv sync --dev
 # Run the recommendations gRPC service
 pipenv run recommendations
 
+# Run the green gRPC service, this service changes the background colour
+pipenv run green
+
 # Run the webserver
 pipenv run web
 ```
+
+Browse: http://127.0.0.1:5000/
+
+additionally change the background colour:
+
+- http://127.0.0.1:5000/moldy
+- http://127.0.0.1:5000/pastel
+- http://127.0.0.1:5000/modern
 
 The webserver asks the recommendations service for book recommendations in the "mystery" category and shows them in the browser.
 
